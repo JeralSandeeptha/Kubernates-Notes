@@ -543,6 +543,8 @@ kubectl exec -it my-pod -- echo $MY_VAR     # Show specific one
 ### Config Maps
 - A ConfigMap is a Kubernetes object used to store non-sensitive key-value pairs. It allows you to decouple configuration from application code
 - Use ConfigMaps to store configuration data like environment variables, command-line arguments, port numbers, URLs, and feature flags
+- `If we use env inside of pods and deployments we can't reuse them. But with the ConfigMaps we can reuse them`
+- We create kubernates object with all the envs
 
 #### Why Use ConfigMaps?
 - Keep your app configuration separate from container images
@@ -614,10 +616,98 @@ kubectl describe configmap app-config
 - Don't store passwords or secrets — use Secrets instead
 - ConfigMaps are not encrypted and are stored in plaintext
 
+#### Example
+- Create a ConfigMap
+```cmd
+kubectl create cm sample-cm --from-literal=firstName=jeral --from-literal=lastName=sandeeptha
+```
+
+- Create a manifestfile of ConfigMap
+```cmd
+kubectl create cm sample-cm --from-literal=firstName=jeral --from-literal=lastName=sandeeptha --dry-run=client -o yaml > configmap.yaml
+```
+
+- Get ConfigMaps
+```cmd
+kubectl get cm
+```
+
+- Describe ConfigMaps
+```cmd
+kubectl describe cm
+```
+
 <br />
 <br />
 
 ### Secrets
+
+#### What is a Secret in Kubernetes?
+- A `Secret` is a Kubernetes object used to store sensitive data in your cluster. 
+- These include:
+    - `Database passwords`
+    - `API tokens`
+    - `SSH keys`
+    - `TLS certificates`
+- `Secrets` help keep this information securely managed and accessible, without embedding it directly in your application code or container images.
+
+#### Why Use Secrets (Instead of ConfigMaps or Hardcoding)?
+- Secrets offer:
+    - Base64 encoding for obfuscation
+    - Optional encryption at rest (etcd encryption)
+    - Controlled access via RBAC (Role-Based Access Control)
+    - Mounted with file permission restrictions
+    - Integration with Kubernetes ServiceAccounts and imagePullSecrets
+- Unlike `ConfigMaps`, `Secrets` are not meant to be human-readable and are intended to store confidential data.
+
+#### Types of Kubernetes Secrets
+| Type                                    | Description                                              |
+| --------------------------------------- | -------------------------------------------------------- |
+| **Opaque**                              | Default; used for arbitrary user-defined key-value pairs |
+| **kubernetes.io/basic-auth**            | For storing username/password credentials                |
+| **kubernetes.io/ssh-auth**              | Stores SSH credentials                                   |
+| **kubernetes.io/tls**                   | TLS cert/key pair (used with Ingress or HTTPS services)  |
+| **kubernetes.io/service-account-token** | Automatically created and managed by Kubernetes for pods |
+
+#### YAML Manifest
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  username: YWRtaW4=         # base64 of "admin"
+  password: UzNjcjN0IQ==     # base64 of "S3cr3t!"
+```
+
+#### Using Secrets in Pods
+```yaml
+env:
+- name: DB_USER
+  valueFrom:
+    secretKeyRef:
+      name: db-secret
+      key: username
+- name: DB_PASS
+  valueFrom:
+    secretKeyRef:
+      name: db-secret
+      key: password
+```
+
+#### Examples
+- Create a Secrets
+```bash
+kubectl create secret generic config-secret \
+  --from-file=./config.txt
+```
+ 
+- Apply from a file
+```bash
+kubectl create secret generic config-secret \
+  --from-file=./config.txt
+```
 
 <br />
 <br />
