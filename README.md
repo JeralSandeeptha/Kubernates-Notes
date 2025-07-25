@@ -751,6 +751,8 @@ kubectl describe node minikube
 kubectl 
 ```
 
+<br />
+
 - Get Kubernates default resources
 ```bash
 kubectl get all
@@ -763,11 +765,6 @@ kubectl delete all --all
 
 <br />
 
-- Create a Pod
-```bash
-kubectl run nginx-pod --image=nginx:latest
-```
-
 - Create a Pod yaml file
 ```bash
 kubectl run nginx-pod --image=nginx:latest --dry-run=client -o yaml > nginx-pod.yaml
@@ -776,31 +773,6 @@ kubectl run nginx-pod --image=nginx:latest --dry-run=client -o yaml > nginx-pod.
 - Get a Pods
 ```bash
 kubectl get pods
-```
-
-- Get a Pods with more info
-```bash
-kubectl get pods -o wide
-```
-
-- Explain Pod
-```bash
-kubectl exaplin pod
-```
-
-- Describe Pod
-```bash
-kubectl describe nginx-pod
-```
-
-- Update a Pod
-```bash
-kubectl edit pod nginx-pod
-```
-
-- Delete Pod
-```bash
-kubectl delete nginx-pod
 ```
 
 - Get inside of the Pod
