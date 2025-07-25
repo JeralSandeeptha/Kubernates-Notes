@@ -36,6 +36,8 @@
 - Kubernates has `Control Plane` which is called as a `Master Nodes` and it also has `Worker Nodes` also known as `Data Planes`
 ![Kubernates Nodes Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752929063/d7fbbad2-97d1-413f-9456-3b7c14aaba06.png)
 
+![Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1753405389/b1685f44-6e11-4f0b-9729-ed2d63fe73d1.png)
+
 #### Control Plane / Master Node
 
 ![Control Plane Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752934631/15e2be66-8dc7-47d0-ae3c-4ee44206f248.png)
