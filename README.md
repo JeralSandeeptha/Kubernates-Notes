@@ -732,6 +732,8 @@ kubectl config current-context
 kubectl cluster-info
 ```
 
+<br />
+
 - Get Nodes
 ```
 kubectl get nodes
@@ -749,9 +751,61 @@ kubectl describe node minikube
 kubectl 
 ```
 
+- Get Kubernates default resources
+```bash
+kubectl get all
+```
+
 - Delete Kubernates default resources
 ```bash
 kubectl delete all --all
+```
+
+<br />
+
+- Create a Pod
+```bash
+kubectl run nginx-pod --image=nginx:latest
+```
+
+- Create a Pod yaml file
+```bash
+kubectl run nginx-pod --image=nginx:latest --dry-run=client -o yaml > nginx-pod.yaml
+```
+
+- Get a Pods
+```bash
+kubectl get pods
+```
+
+- Get a Pods with more info
+```bash
+kubectl get pods -o wide
+```
+
+- Explain Pod
+```bash
+kubectl exaplin pod
+```
+
+- Describe Pod
+```bash
+kubectl describe nginx-pod
+```
+
+- Update a Pod
+```bash
+kubectl edit pod nginx-pod
+```
+
+- Delete Pod
+```bash
+kubectl delete nginx-pod
+```
+
+- Get inside of the Pod
+```bash
+kubectl exec -it nginx-pod -- bash
 ```
 
 <br />
