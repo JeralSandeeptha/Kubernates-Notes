@@ -12,6 +12,7 @@
 - [Environment Variables](#environment-variables)
 - [Config Maps](#config-maps)
 - [Secrets](#secrets)
+- [Kubernates Workflow](#kubernates-workflow)
 
 <br />
 <br />
@@ -709,6 +710,48 @@ kubectl create secret generic config-secret \
 ```bash
 kubectl create secret generic config-secret \
   --from-file=./config.txt
+```
+
+<br />
+<br />
+
+### Kubernates Workflow
+
+- Get clusters
+```bash
+kubectl config get-clusters
+```
+
+- Get current cluster
+```bash
+kubectl config current-context
+```
+
+- Get cluster information
+```bash
+kubectl cluster-info
+```
+
+- Get Nodes
+```
+kubectl get nodes
+
+kubectl get nodes -o wide
+```
+
+- Describe node
+```bash
+kubectl describe node minikube
+```
+
+- Switch to another Node
+```bash
+kubectl 
+```
+
+- Delete Kubernates default resources
+```bash
+kubectl delete all --all
 ```
 
 <br />
