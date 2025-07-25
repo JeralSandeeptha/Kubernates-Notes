@@ -302,9 +302,10 @@ kubectl delete nginx-pod
 
 #### What is a Deployment in Kubernetes?
 - A Deployment is a Kubernetes resource object that provides declarative updates for Pods and ReplicaSets.
+- This is also like a replicaset with rollout fashion. When pod scaliing and still it scale one by one so we don't have any downtimes.
     - It manages the lifecycle of Pods and ensures the desired number of replicas are running.
     - It helps in rolling updates, rollbacks, scaling, and self-healing of your app.
-    - You never usually manage Pods directly in production; instead, you create and manage Deployments.
+    - You never usually manage Pods directly in production. instead, you create and manage Deployments.
 
 - Why Deployments?
 - `Ensure availability`: Keep the specified number of Pods running.
