@@ -13,6 +13,8 @@
 - [Config Maps](#config-maps)
 - [Secrets](#secrets)
 - [Demonset](#demonset)
+- [Job](#job)
+- [Cron Job](#cron-job)
 - [Kubernates Workflow](#kubernates-workflow)
 - [Multi Container Pods](#multi-container-pods)
 
@@ -750,6 +752,35 @@ kubectl create secret generic config-secret \
 | System security scanning        | Falco, Aqua Security     |
 | Container runtime monitoring    | cAdvisor                 |
 | Node local storage provisioning | Local volume provisioner |
+
+<br />
+<br />
+
+### Job
+- A `Job` in Kubernetes is used to run a one-time task to completion.
+- It ensures that a specified number of Pods successfully terminate, and then the Job is considered complete.
+
+| Feature             | Description                          |
+| ------------------- | ------------------------------------ |
+| One-shot tasks      | Run once, then exit on success       |
+| Pod retry mechanism | Can retry failed Pods (with limits)  |
+| Parallelism support | Can run multiple Pods simultaneously |
+| Completion tracking | Stops when all Pods complete         |
+
+<br />
+<br />
+
+### Cron Job
+- A `CronJob` allows you to run Jobs on a time-based schedule (just like UNIX cron)
+- It creates a Job at scheduled intervals, and each Job runs independently
+
+| Feature             | Description                             |
+| ------------------- | --------------------------------------- |
+| Time-based trigger  | Uses cron format (e.g., `*/5 * * * *`)  |
+| Job template        | Uses the same spec as a normal Job      |
+| Independent runs    | Each execution is its own Job           |
+| Missed run handling | Can skip or catch up on missed runs     |
+| History tracking    | Keeps logs of completed and failed jobs |
 
 <br />
 <br />
