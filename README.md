@@ -392,7 +392,6 @@ kubectl delete deploy nginx-deployment
 
 ![Service Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752943857/f056d0da-b594-4f38-b052-a555ea0dcd13.png)
 ![Service External Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752944168/6317e539-88b4-4dcc-ada3-04aef1568430.png)
-![Service Works Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752944279/62808821-5622-4abc-817e-4ff40fe95c99.png)
 
 #### What is a Kubernetes Service?
 - A Service in Kubernetes is an abstraction that defines a logical set of Pods and a policy by which to access them.
@@ -422,6 +421,7 @@ type: ClusterIP
 ```
 
 ##### NodePort
+![Service Works Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1752944279/62808821-5622-4abc-817e-4ff40fe95c99.png)
 - Exposes the service on each Node's IP at a static port (30000–32767).
 - You can access it as: http://<NodeIP>:<NodePort>
 - Example use: Quick access for debugging, basic external traffic entry.
