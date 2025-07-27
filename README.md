@@ -420,7 +420,7 @@ kubectl delete deploy nginx-deployment
 - Accessible only within the cluster.
 - Ideal for internal communication between services.
 - Example use: A backend service used by a frontend inside the same cluster.
-```cmd
+```yaml
 type: ClusterIP
 ```
 
