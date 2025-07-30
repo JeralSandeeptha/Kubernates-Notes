@@ -445,7 +445,7 @@ type: LoadBalancer
 ##### ExternalName
 - Maps a service to an external DNS name.
 - Used to redirect in-cluster traffic to external services.
-```cmd
+```yaml
 type: ExternalName
 externalName: api.external.com
 ```
