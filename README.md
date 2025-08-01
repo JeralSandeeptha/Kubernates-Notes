@@ -429,7 +429,7 @@ type: ClusterIP
 - Exposes the service on each Node's IP at a static port (30000–32767).
 - You can access it as: http://<NodeIP>:<NodePort>
 - Example use: Quick access for debugging, basic external traffic entry.
-```cmd
+```yaml
 type: NodePort
 ```
 
