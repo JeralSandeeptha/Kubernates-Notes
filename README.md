@@ -438,7 +438,7 @@ type: NodePort
 - Exposes the service externally using the cloud provider’s load balancer.
 - When we create a load balancer it will go to the cloud provider and create a loadbalancer in the cloud service.
 - Example use: Production-level public access to an app (e.g., AWS ELB, GCP LB).
-```cmd
+```yaml
 type: LoadBalancer
 ```
 
