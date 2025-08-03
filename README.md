@@ -502,7 +502,7 @@ kubectl delete service <service_name>
 
 #### Types of Environment Variables
 - Static Values
-```cmd
+```yaml
 env:
 - name: ENV_VAR_NAME
   value: "some-value"
