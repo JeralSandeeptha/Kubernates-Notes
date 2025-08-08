@@ -510,7 +510,7 @@ env:
 ```
 
 - ConfigMaps
-```cmd
+```yaml
 envFrom:
 - configMapRef:
     name: my-config
