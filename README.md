@@ -823,7 +823,7 @@ kubectl create secret generic config-secret \
     - ReadOnlyMany (ROX)
     - ReadWriteMany (RWX)
 - PV and PVC access modes should be the same of both of them
-```cmd
+```yaml
 accessModes:
   - ReadWriteOnce
 ```
