@@ -858,6 +858,11 @@ accessModes:
 
 ### Kubernates Workflow
 
+- Get Cluster Status
+```bash
+minikube status
+```
+
 - Get clusters
 ```bash
 kubectl config get-clusters
