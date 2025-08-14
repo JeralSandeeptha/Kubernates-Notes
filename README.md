@@ -524,7 +524,7 @@ env:
 ```
 
 - Secrets
-```cmd
+```yaml
 envFrom:
 - secretRef:
     name: my-secret
