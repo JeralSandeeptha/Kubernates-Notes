@@ -417,6 +417,8 @@ kubectl delete deploy nginx-deployment
 
 #### Types of Services
 
+[Image](https://res.cloudinary.com/djgwvmcdl/image/upload/v1767850187/WhatsApp_Image_2026-01-08_at_10.51.36_lwgx3m.jpg)
+
 ##### ClusterIP (Default)
 - Accessible only within the cluster.
 - Ideal for internal communication between services.
