@@ -1,4 +1,4 @@
-### Pod
+# Pod
 
 <br />
 
@@ -24,11 +24,15 @@
 - Shared network namespace (IP address & port space)
 - Specification for how to run the containers
 
-#### Pod Lifecycle
+<br />
+
+## Pod Lifecycle
 - Pods are created, scheduled on nodes, run, and eventually terminated.
 - Pods are ephemeral; when a Pod dies, it’s not resurrected automatically. Instead, controllers like Deployments create new Pods.
 
-#### Pod Features
+<br />
+
+## Pod Features
 1. Shared Network Namespace
 - Containers in a Pod share the same IP address and port space.
 - They can communicate via localhost inside the Pod.
@@ -50,7 +54,7 @@
 
 <br />
 
-#### Examples
+### Examples
 - Explain a Pod
 ```cmd
 kubectl explain pod
