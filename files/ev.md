@@ -1,11 +1,11 @@
-### Environment Variables
+# Environment Variables
 - `Environment variables` in Kubernetes are key-value pairs injected into containers inside Pods.
 - They are commonly used to:
     - Configure apps (e.g., database URLs, secrets, API keys)
     - Pass dynamic data (like `Pod IP`, `namespace`, `Node name`)
     - Separate config from code (12-Factor App principle)
 
-#### Types of Environment Variables
+## Types of Environment Variables
 - Static Values
 ```yaml
 env:
@@ -41,13 +41,13 @@ env:
       key: password
 ```
 
-#### Testing 
+## Testing 
 ```cmd
 kubectl exec -it my-pod -- printenv         # Show all env vars
 kubectl exec -it my-pod -- echo $MY_VAR     # Show specific one
 ```
 
-#### Summary
+## Summary
 | Type            | Use Case                             | Source       |
 | --------------- | ------------------------------------ | ------------ |
 | Static Value    | Hardcoded string                     | Pod spec     |
