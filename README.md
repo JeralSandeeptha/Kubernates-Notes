@@ -13,7 +13,7 @@
 - [Config Maps](./files/configmaps.md)
 - [Secrets](./files/secrets.md)
 - [Demonset](./files/demonsets.md)
-- [Job](#job)
+- [Job](./files/job.md)
 - [Cron Job](#cron-job)
 - [Volumes](#volumes)
 - [Kubernates Workflow](#kubernates-workflow)
@@ -21,17 +21,6 @@
 
 <br />
 <br />
-
-### Job
-- A `Job` in Kubernetes is used to run a one-time task to completion.
-- It ensures that a specified number of Pods successfully terminate, and then the Job is considered complete.
-
-| Feature             | Description                          |
-| ------------------- | ------------------------------------ |
-| One-shot tasks      | Run once, then exit on success       |
-| Pod retry mechanism | Can retry failed Pods (with limits)  |
-| Parallelism support | Can run multiple Pods simultaneously |
-| Completion tracking | Stops when all Pods complete         |
 
 ### Cron Job
 - A `CronJob` allows you to run Jobs on a time-based schedule (just like UNIX cron)
