@@ -12,42 +12,12 @@
 - [Environment Variables](./files/ev.yaml)
 - [Config Maps](./files/configmaps.md)
 - [Secrets](./files/secrets.md)
-- [Demonset](#demonset)
+- [Demonset](./files/demonsets.md)
 - [Job](#job)
 - [Cron Job](#cron-job)
 - [Volumes](#volumes)
 - [Kubernates Workflow](#kubernates-workflow)
 - [Multi Container Pods](#multi-container-pods)
-
-<br />
-<br />
-
-### Demonset
-- A `DaemonSet` ensures that a copy of a specific Pod runs on every node in a Kubernetes cluster (or on selected nodes using label selectors).
-
-- Runs one Pod per node.
-- Automatically runs new Pods when:
-    - A node is added.
-    - A node is removed → its Pod is deleted.
-- Can target specific nodes using:
-    - Node labels
-    - Tolerations and taints
-    - Node selectors or affinity rules
-
-- It’s used to automate infrastructure-level tasks like:
-    - Logging agents
-    - Monitoring agents
-    - Node-level storage
-    - Network plugins
-    - Security tools
-
-| Use Case                        | Example Tool             |
-| ------------------------------- | ------------------------ |
-| Log collection                  | Fluentd, Logstash        |
-| Metrics monitoring              | Prometheus Node Exporter |
-| System security scanning        | Falco, Aqua Security     |
-| Container runtime monitoring    | cAdvisor                 |
-| Node local storage provisioning | Local volume provisioner |
 
 <br />
 <br />
@@ -62,9 +32,6 @@
 | Pod retry mechanism | Can retry failed Pods (with limits)  |
 | Parallelism support | Can run multiple Pods simultaneously |
 | Completion tracking | Stops when all Pods complete         |
-
-<br />
-<br />
 
 ### Cron Job
 - A `CronJob` allows you to run Jobs on a time-based schedule (just like UNIX cron)
